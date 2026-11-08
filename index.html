@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media Pembelajaran - Pernikahan dalam Islam</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f7f4eb;
+  color:#30483b;
+}
+header{
+  background:#315b46;
+  color:white;
+  text-align:center;
+  padding:35px 18px;
+}
+header h1{margin:0 0 10px;font-size:26px}
+header p{margin:0;line-height:1.6}
+.container{max-width:850px;margin:25px auto;padding:15px}
+h2{text-align:center;color:#315b46}
+.menu{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+button{
+  border:0;
+  background:white;
+  color:#315b46;
+  padding:22px 12px;
+  border-radius:15px;
+  box-shadow:0 3px 12px #00000012;
+  font-size:16px;
+  cursor:pointer;
+}
+button span{display:block;font-size:30px;margin-bottom:10px}
+button:hover{background:#e8eee6}
+.content{
+  display:none;
+  background:white;
+  margin-top:22px;
+  padding:22px;
+  border-radius:15px;
+  line-height:1.7;
+  box-shadow:0 3px 12px #00000012;
+}
+.content.active{display:block}
+a{color:#39744e;font-weight:bold}
+.back{
+  background:#315b46;
+  color:white;
+  padding:12px 20px;
+  margin-top:15px;
+}
+footer{text-align:center;padding:25px;color:#718071}
+@media(max-width:480px){
+  header h1{font-size:22px}
+  .menu{gap:9px}
+  button{font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>PER NIKAHAN DALAM ISLAM</h1>
+  <p>Media Pembelajaran Interaktif Pendidikan Agama Islam</p>
+  <p>Belajar memahami pernikahan sebagai ikatan suci dalam Islam</p>
+</header>
+
+<div class="container">
+<h2>Menu Pembelajaran</h2>
+<p style="text-align:center">
+Silakan klik gambar atau menu di bawah untuk membuka materi.
+</p>
+
+<div class="menu">
+<button onclick="buka('quran')">
+<span>📖</span>Al-Qur'an Digital
+</button>
+
+<button onclick="buka('materi')">
+<span>💍</span>Materi Pernikahan
+</button>
+
+<button onclick="buka('word')">
+<span>📄</span>Petunjuk Tugas Word
+</button>
+
+<button onclick="buka('gambar')">
+<span>🖼️</span>Petunjuk Tugas Gambar
+</button>
+</div>
+
+<div id="quran" class="content">
+<h2>Al-Qur'an Digital</h2>
+<p>Bacalah ayat Al-Qur'an yang berkaitan dengan tujuan pernikahan dalam Islam.</p>
+<p><b>Q.S. Ar-Rum [30]: 21</b></p>
+<a href="https://quran.com/30/21" target="_blank">
+Buka Q.S. Ar-Rum ayat 21
+</a>
+</div>
+
+<div id="materi" class="content">
+<h2>Materi Pernikahan dalam Islam</h2>
+<p>Silakan pelajari materi berikut:</p>
+<ul>
+<li>Pengertian pernikahan</li>
+<li>Tujuan pernikahan</li>
+<li>Hukum pernikahan</li>
+<li>Khitbah atau peminangan</li>
+<li>Perempuan yang boleh dan tidak boleh dipinang</li>
+<li>Perbedaan khitbah dan pacaran</li>
+</ul>
+<p>Materi lengkap akan ditambahkan pada bagian ini.</p>
+</div>
+
+<div id="word" class="content">
+<h2>Petunjuk Tugas Word</h2>
+<p>Silakan buka dokumen petunjuk tugas yang disediakan oleh guru.</p>
+<a href="petunjuk-tugas.docx" download>
+Unduh Petunjuk Tugas Word
+</a>
+</div>
+
+<div id="gambar" class="content">
+<h2>Petunjuk Tugas Bergambar</h2>
+<p>Perhatikan gambar petunjuk tugas berikut.</p>
+<img src="petunjuk-gambar.jpg"
+alt="Gambar petunjuk tugas"
+style="width:100%;border-radius:10px">
+</div>
+
+<center>
+<button class="back" onclick="tutup()">Kembali ke Menu</button>
+</center>
+</div>
+
+<footer>
+Media Pembelajaran PAI | Pernikahan dalam Islam
+</footer>
+
+<script>
+function buka(id){
+  document.querySelectorAll('.content').forEach(
+    el=>el.classList.remove('active')
+  );
+  document.getElementById(id).classList.add('active');
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+function tutup(){
+  document.querySelectorAll('.content').forEach(
+    el=>el.classList.remove('active')
+  );
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>
